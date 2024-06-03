@@ -1,4 +1,5 @@
 import {InputTodo} from "@/types";
+import ConfirmClear from "./hooks/ConfirmClear";
 
 type Props = {
 	props: {
@@ -12,11 +13,8 @@ export default function ClearTodo({props: {setAddTodohandler: setTodo}}: Props) 
 		setTodo([]);
 	};
 	return (
-		<button
-			className="text-white py-2 px-4 rounded-md my-3 bg-orange-500 hover:bg-orange-700"
-			onClick={handleClear}
-		>
-			clear
-		</button>
+		<>
+			<ConfirmClear handleClear={handleClear} />
+		</>
 	);
 }

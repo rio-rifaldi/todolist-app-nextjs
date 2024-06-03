@@ -1,6 +1,8 @@
 import {useState} from "react";
 import useAddTodo from "./hooks/useAddTodo";
 import {InputTodo, ItodoHandler} from "@/types";
+import {Input} from "@/components/ui/input";
+import {Button} from "@/components/ui/button";
 
 type Props = {
 	addTodoProps: {
@@ -20,24 +22,24 @@ export default function AddTodo({addTodoProps: {setAddTodohandler, todos}}: Prop
 		>
 			<div className="flex gap-2 items-end">
 				<div className="grid gap-3 w-full">
-					<input
+					<Input
 						type="text"
 						name="text"
 						id="text"
-						placeholder="masukan sini"
-						className="px-5 py-3 rounded-md text-black"
+						placeholder="What will you do..."
+						// className="px-5 py-3 rounded-md text-black"
 						onChange={(e) => setInput(e.target.value)}
 						value={input}
 						required
 					/>
 				</div>
 
-				<button
+				<Button
 					type="submit"
-					className=" h-max font-medium px-6 py-3 rounded bg-blue-500 hover:bg-blue-700 transition-colors  text-white"
+					size={"lg"}
 				>
-					kirim
-				</button>
+					Add
+				</Button>
 			</div>
 		</form>
 	);

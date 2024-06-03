@@ -16,7 +16,7 @@ export default function Home() {
 	return (
 		<main className="mx-6 my-8 max-w-screen-md sm:mx-auto">
 			<AddTodo addTodoProps={{setAddTodohandler, todos}} />
-			<ul className="my-6 grid ">
+			<ul className="my-6 grid gap-2 ">
 				{todos.length !== 0 &&
 					todos.map(({id, value}) => (
 						<Todo
